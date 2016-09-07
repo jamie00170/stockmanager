@@ -21,10 +21,11 @@ public class IndexServlet extends HttpServlet {
 		// TODO Auto-generated method stub		
 		StockData stocks = new StockData();
 		BigDecimal price = stocks.getStockPrice("TSLA");
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath()).append("\n TSLA Stock Price: " + price.toString());
-		
-		
+		if (price != null || price != new BigDecimal(0.0)){
+			response.getWriter().append(" TSLA Stock Price: " + price.toString());
+
+		}
+				
 	}
 
 }
