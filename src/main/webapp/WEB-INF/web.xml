@@ -19,4 +19,14 @@
     <servlet-name>IndexServlet</servlet-name>
     <url-pattern>/IndexServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StockHistoryServlet</display-name>
+    <servlet-name>StockHistoryServlet</servlet-name>
+    <servlet-class>com.stock.main.StockHistoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StockHistoryServlet</servlet-name>
+    <url-pattern>/StockHistoryServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

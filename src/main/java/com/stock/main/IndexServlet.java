@@ -32,5 +32,7 @@ public class IndexServlet extends HttpServlet {
 		request.setAttribute("requestedticker", ticker);
 		request.setAttribute("requestedprice", price);
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		
+		
 	}
 }
