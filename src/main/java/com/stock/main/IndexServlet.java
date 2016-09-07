@@ -22,8 +22,9 @@ public class IndexServlet extends HttpServlet {
 		StockData stocks = new StockData();
 		BigDecimal price = stocks.getStockPrice("TSLA");
 		if (price != null || price != new BigDecimal(0.0)){
-			response.getWriter().append(" TSLA Stock Price: " + price.toString());
-
+			//response.getWriter().append(" TSLA Stock Price: " + price.toString());
+			request.setAttribute("price", price);
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 				
 	}
