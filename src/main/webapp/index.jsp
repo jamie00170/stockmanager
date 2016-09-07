@@ -11,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Stock Price Displayer</title>
 </head>
+<%@ include file="header.jsp" %>
 <body>
   <form action="${pageContext.request.contextPath}/IndexServlet" method="post">
   	Enter a ticker symbol: <br/>

@@ -1,0 +1,29 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black
+
+}
+
+li {
+    float: left;
+    text-align: center;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "arial";
+}
+
+#inout {
+    position: fixed;
+    right:10px;
+}
+
+
+li:hover {
+    background-color: #333333;
+}

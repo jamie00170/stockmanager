@@ -28,7 +28,6 @@ public class IndexServlet extends HttpServlet {
 		String ticker = (String) request.getParameter("ticker");
 		BigDecimal price = stocks.getStockPrice(ticker);
 			
-		response.getWriter().append("ticker: " + ticker + "price: " + price.toString());
 		request.setAttribute("requestedticker", ticker);
 		request.setAttribute("requestedprice", price);
 		request.getRequestDispatcher("/index.jsp").forward(request, response);
