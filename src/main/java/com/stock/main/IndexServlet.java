@@ -17,16 +17,20 @@ public class IndexServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub		
-		StockData stocks = new StockData();
-		BigDecimal price = stocks.getStockPrice("TSLA");
-		if (price != null || price != new BigDecimal(0.0)){
-			//response.getWriter().append(" TSLA Stock Price: " + price.toString());
-			request.setAttribute("price", price);
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
-		}
-				
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		StockData stocks = new StockData();
+		
+		String ticker = (String) request.getParameter("ticker");
+		BigDecimal price = stocks.getStockPrice(ticker);
+			
+		response.getWriter().append("ticker: " + ticker + "price: " + price.toString());
+		request.setAttribute("requestedticker", ticker);
+		request.setAttribute("requestedprice", price);
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
+	}
 }
